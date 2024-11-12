@@ -1,0 +1,294 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('Background.png') no-repeat center center fixed; /* Pastikan nama file sesuai */
+    background-size: cover;
+    color: #fff;
+    position: relative; /* Agar elemen anak dapat diposisikan relatif */
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Agar berada di belakang konten */
+}
+
+header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 200px; /* Atur lebar logo */
+    height: 200px; /* Atur tinggi logo */
+    margin: 0 15px; /* Jarak antara logo dan judul */
+    border-radius: 50%; /* Membuat bingkai lingkaran */
+    overflow: hidden; /* Memastikan konten tetap di dalam bingkai */
+    border: 2px solid white; /* Tambahkan border putih */
+}
+
+.logo img {
+    width: 100%; /* Sesuaikan gambar dengan ukuran logo */
+    height: auto; /* Memastikan proporsi tetap */
+}
+
+h1 {
+    flex-grow: 1; /* Menyebar judul di tengah */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#banner {
+    text-align: center;
+    position: relative;
+}
+
+#banner img {
+    width: 100%; /* Responsif */
+    max-height: 400px; /* Atur tinggi maksimum */
+    object-fit: cover; /* Memastikan gambar tetap proporsional */
+}
+
+section {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background: #0056b3;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer img {
+    width: 100%; /* Responsif */
+    max-height: 100px; /* Atur tinggi maksimum */
+    object-fit: cover; /* Memastikan gambar tetap proporsional */
+}
+
+footer a {
+    color: #0b54f1;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 20px;
+}
+#best-images {
+    padding: 20px;
+    text-align: center;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.image-container img {
+    max-width: 300px; /* Atur lebar maksimum gambar */
+    height: auto;     /* Memastikan tinggi gambar proporsional */
+    cursor: pointer;
+    transition: transform 0.2s;
+    border-radius: 5px; /* Tambahkan sudut melengkung jika diinginkan */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan untuk efek */
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+}
+
+.zoomed-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.zoomed-image img {
+    max-width: 90%;
+    max-height: 90%;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px; /* Jarak antar item */
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    color: #d9dff7; /* Warna teks */
+    font-weight: bold;
+    transition: transform 0.2s, color 0.2s; /* Transisi untuk transformasi dan warna */
+}
+
+nav ul li a:active {
+    font-family: 'Poppins', sans-serif;
+    transform: scale(0.95); /* Efek memperkecil saat ditekan */
+    color: #007BFF; /* Ubah warna saat ditekan */
+}
+
+#best-images {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden; /* Mencegah garis keluar dari container */
+}
+
+#best-images h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+#best-images h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px; /* Jarak dari teks */
+    transform: translateX(-50%);
+    width: 80px; /* Lebar garis */
+    height: 4px; /* Tinggi garis */
+    background: #007BFF; /* Warna garis */
+    animation: line-animation 1s infinite; /* Animasi garis */
+}
+
+@keyframes line-animation {
+    0%, 100% {
+        width: 50px; /* Lebar awal dan akhir */
+    }
+    50% {
+        width: 100px; /* Lebar maksimum saat animasi */
+    }
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.image-container img {
+    max-width: 300px; /* Atur lebar maksimum gambar */
+    height: auto;     /* Memastikan tinggi gambar proporsional */
+    cursor: pointer;
+    transition: transform 0.2s;
+    border-radius: 5px; /* Tambahkan sudut melengkung jika diinginkan */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan untuk efek */
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Font untuk body */
+}
+
+h1, h2 {
+    font-family: 'Dancing Script', cursive; /* Font untuk judul */
+    color: #f3eaea; /* Warna judul */
+}
+
+footer p {
+    font-family: 'Poppins', sans-serif; /* Font untuk footer */
+}
+.running-text {
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    width: 100%; /* Mengatur lebar penuh */
+}
+
+.running-text p {
+    display: inline-block;
+    animation: scroll 10s linear infinite; /* Durasi animasi dan pengulangan */
+    margin: 0; /* Menghilangkan margin default */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%); /* Mulai dari kanan */
+    }
+    100% {
+        transform: translateX(-100%); /* Bergerak ke kiri */
+    }
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centering content in container */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0f79f1; /* Warna latar belakang tombol */
+    color: white; /* Warna teks */
+    text-decoration: none; /* Menghapus garis bawah */
+    border-radius: 5px; /* Sudut membulat */
+    transition: background-color 0.3s; /* Efek transisi saat hover */
+    margin: 5px; /* Ruang antar tombol */
+}
+
+.button:hover {
+    background-color: #e31616; /* Warna saat hover */
+}

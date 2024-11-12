@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hari Ketiga</title>
+
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <!-- Our CSS -->
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0b54f1;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin: 20px 0;
+        }
+
+        .button:hover {
+            background-color: #e00e4d;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('Background.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #0c0c0c;
+            position: relative;
+        }
+
+        .container {
+            max-width: 900px;
+            padding: 15px;
+            background-color: #f6f6f9;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative; /* Untuk positioning konten di atas partikel */
+            z-index: 1; /* Pastikan konten di atas partikel */
+        }
+
+        .slider .slick-slide {
+            border: solid 1px #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slider .slick-slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .slick-prev, .slick-next {
+            width: 50px;
+            height: 50px;
+            z-index: 1;
+        }
+        .slick-prev {
+            left: 5px;
+        }
+        .slick-next {
+            right: 5px;
+        }
+        .slick-prev:before, 
+        .slick-next:before {
+            font-size: 40px;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .slick-dots {
+            bottom: 15px;
+        }
+
+        .slick-dots li button:before {
+            font-size: 12px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+            opacity: 1;
+        }
+        .slick-dots li.slick-active button:before {
+            color: #dedede;
+        }
+
+        .slider:not(:hover) .slick-arrow,
+        .slider:not(:hover) .slick-dots {
+            opacity: 0;
+        }
+
+        .slick-arrow,
+        .slick-dots {
+            transition: opacity 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hari Pertama</h1>
+        <p>Foto Hari Ketiga Vacation On Bandung 10/11/2024</p>
+        <a href="index.html" class="button">HOME</a>
+        
+        <!-- Tombol Play/Pause -->
+        <button id="playPauseBtn" class="button">Play</button>
+
+        <div class="slider">
+            <div>
+                <a href="#">
+                    <img src="Gambar/image_75.jpg" alt="Image 75">
+                </a>            
+            </div>
+            <div>
+                <a href="#">
+                    <img src="Gambar/image_76.jpg" alt="Image 76">
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="Gambar/image_77.jpg" alt="Image 77">
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="Gambar/image_78.jpg" alt="Image 78">
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="Gambar/image_79.jpg" alt="Image 79">
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="Gambar/image_80.jpg" alt="Image 80">
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="Gambar/image_81.jpg" alt="Image 81">
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="Gambar/image_82.jpg" alt="Image 82">
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="Gambar/image_83.jpg" alt="Image 83">
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="Gambar/image_84.jpg" alt="Image 84">
+                </a>
+            </div>
+            
+
+            <!-- Tambahkan lebih banyak gambar sesuai kebutuhan -->
+        </div>
+    </div>
+
+    <!-- Audio Background -->
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="Gambar/Walking-Home-chosic.com_.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- Slick JS -->    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- Particles JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Our Script -->
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                autoplay: true,
+                autoplaySpeed: 2500,
+                dots: true
+            });
+
+            // Kontrol Play/Pause
+            const audio = document.getElementById('backgroundMusic');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+
+            playPauseBtn.addEventListener('click', function() {
+                if (audio.paused) {
+                    audio.play();
+                    playPauseBtn.textContent = 'Pause';
+                } else {
+                    audio.pause();
+                    playPauseBtn.textContent = 'Play';
+                }
+            });
+        });
+    </script>
+ 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <footer>
+    <img src="footer.png" alt="Footer" />
+    <p>Shinobefranz Profile:</p>
+    <a href="https://www.instagram.com/shinobefranz/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <p>&copy; 2024 TATIANA PERSONAL WEB BLOG</p>
+</footer>
+
+<style>
+    footer,.container {
+        background-color: rgba(246, 246, 249, 0.8); /* Light gray with 80% opacity */
+        padding: 20px;
+        text-align: center; /* Center the text and icons */
+        border-top: 1px solid rgba(204, 204, 204, 0.5); /* Lighter border with some transparency */
+    }
+
+    footer img {
+        max-width: 100%; /* Ensure the image is responsive */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 10px; /* Space below the image */
+    }
+
+    footer p {
+        margin: 10px 0; /* Space around paragraphs */
+        font-size: 1rem; /* Base font size */
+    }
+
+    footer a {
+        margin: 0 10px; /* Space between icons */
+        color: #0b54f1; /* Icon color */
+        text-decoration: none; /* Remove underline */
+    }
+
+    footer a:hover {
+        color: #e00e4d; /* Change color on hover */
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+        footer p {
+            font-size: 0.9rem; /* Smaller font size on tablets */
+        }
+    }
+
+    @media (max-width: 480px) {
+        footer p {
+            font-size: 0.8rem; /* Even smaller font size on mobile */
+        }
+    }
+</style>
+
+</body>
+</html>
